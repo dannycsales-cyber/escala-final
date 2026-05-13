@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@100;300;400;700;900&family=Inter:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-gold-glow: #F5D76E;
+  --color-gold-dim: rgba(212, 175, 55, 0.15);
+  --color-black: #000000;
+  --color-gray-dark: #050505;
+  --color-gray-med: #1A1A1A;
+  --color-white: #F5F5F5;
+
+  --font-serif: "Cinzel", "Playfair Display", serif;
+  --font-sans: "Montserrat", "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/[0.01] backdrop-blur-3xl border border-white/10;
+  }
+  .glass-premium {
+    @apply bg-black/30 backdrop-blur-2xl border border-white/5 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.9)];
+  }
+  .gold-text {
+    @apply bg-gradient-to-b from-[#F5D76E] via-[#D4AF37] to-[#B8860B] bg-clip-text text-transparent;
+  }
+  .gold-border-subtle {
+    @apply border border-gold/10 hover:border-gold/30 transition-colors;
+  }
+  .btn-premium-gold {
+     @apply bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-black font-black transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_15px_30px_rgba(184,134,11,0.2)] hover:shadow-[0_15px_40px_rgba(184,134,11,0.3)];
+  }
+}
